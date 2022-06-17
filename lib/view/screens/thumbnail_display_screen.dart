@@ -38,15 +38,16 @@ class ThumbnailDisplayScreen extends StatelessWidget {
                           context.read<ImageBloc>().state.imageModelList[index];
                       return InkWell(
                           onTap: () {
-                            context
-                                .read<ImageDisplayBloc>()
-                                .add(ImageDisplayFullImageEvent());
+                            context.read<ImageDisplayBloc>().add(
+                                ImageDisplayFullImageEvent(
+                                    imageModel: imageModel));
+
                             print('pressed image');
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) =>
                                     FullImageDisplayScreen()));
                           },
-                          child: Image.network(imageModel.url));
+                          child: Image.network('${imageModel.url}/300/200'));
                     }),
                   )),
             ],

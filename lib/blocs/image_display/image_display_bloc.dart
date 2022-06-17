@@ -8,7 +8,7 @@ part 'image_display_state.dart';
 class ImageDisplayBloc extends Bloc<ImageDisplayEvent, ImageDisplayState> {
   ImageDisplayBloc() : super(ImageDisplayState.initial()) {
     on<ImageDisplayFullImageEvent>((event, emit) {
-      emit(ImageDisplayState(imageModel: state.imageModel));
+      emit(ImageDisplayState(imageModel: event.imageModel));
     });
   }
 }

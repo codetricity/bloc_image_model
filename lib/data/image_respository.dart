@@ -2,17 +2,17 @@ import 'model/image_model.dart';
 
 class ImageRepository {
   static List<ImageModel> imageList = [
-    ImageModel(url: 'https://picsum.photos/seed/picsum/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/a/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/b/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/c/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/d/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/e/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/f/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/g/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/h/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/i/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/j/300/200'),
-    ImageModel(url: 'https://picsum.photos/seed/k/300/200'),
+    ImageModel(url: 'https://picsum.photos/seed/picsum/'),
+    ImageModel(url: 'https://picsum.photos/seed/a/'),
+    ImageModel(url: 'https://picsum.photos/seed/b/'),
+    ImageModel(url: 'https://picsum.photos/seed/c/'),
+    ImageModel(url: 'https://picsum.photos/seed/d/'),
+    ImageModel(url: 'https://picsum.photos/seed/e/'),
+    ImageModel(url: 'https://picsum.photos/seed/f/'),
+    ImageModel(url: 'https://picsum.photos/seed/g/'),
+    ImageModel(url: 'https://picsum.photos/seed/h/'),
+    ImageModel(url: 'https://picsum.photos/seed/i/'),
+    ImageModel(url: 'https://picsum.photos/seed/j/'),
+    ImageModel(url: 'https://picsum.photos/seed/k/'),
   ];
 }

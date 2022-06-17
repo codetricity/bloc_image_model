@@ -8,10 +8,12 @@ class FullImageDisplayScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: BlocBuilder<ImageDisplayBloc, ImageDisplayState>(
-      builder: (context, state) {
-        return Image.network(state.imageModel.url);
-      },
-    ));
+    return Scaffold(
+        appBar: AppBar(),
+        body: BlocBuilder<ImageDisplayBloc, ImageDisplayState>(
+          builder: (context, state) {
+            return Image.network('${state.imageModel.url}300/600');
+          },
+        ));
   }
 }
