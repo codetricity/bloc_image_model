@@ -1,7 +1,9 @@
+import 'package:bloc_screen/blocs/image_display/image_display_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'blocs/bloc/image_bloc.dart';
+import 'blocs/image/image_bloc.dart';
+import 'view/screens/thumbnail_display_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,46 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ImageBloc(),
-      child: MaterialApp(
-        home: Scaffold(
-          body: BlocBuilder<ImageBloc, ImageState>(
-            builder: (context, state) {
-              return Column(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Row(children: [
-                      TextButton(
-                        child: Text('Get Images'),
-                        onPressed: () {
-                          context.read<ImageBloc>().add(showImageListEvent());
-                        },
-                      )
-                    ]),
-                  ),
-                  Expanded(
-                      flex: 5,
-                      child: ListView.builder(
-                        itemCount: context
-                            .read<ImageBloc>()
-                            .state
-                            .imageModelList
-                            .length,
-                        itemBuilder: ((context, index) {
-                          var imageModel = context
-                              .read<ImageBloc>()
-                              .state
-                              .imageModelList[index];
-                          return Image.network(imageModel.url);
-                        }),
-                      )),
-                ],
-              );
-            },
-          ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ImageBloc>(
+          create: (context) => ImageBloc(),
         ),
+        BlocProvider<ImageDisplayBloc>(create: (context) => ImageDisplayBloc())
+      ],
+      child: MaterialApp(
+        home: ThumbnailDisplayScreen(),
       ),
     );
   }
